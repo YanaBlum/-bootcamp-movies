@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <title>Movies App</title>
+  </head>
+
+  <body>
+    <h1>Movie Search App</h1>
+    <div id="container">
+      <div id="upper">
+        <input id="movie-title" type="text" placeholder="Movie Title" />
+        <button id="search">Search!</button>
+      </div>
+      <div id="movies"></div>
+    </div>
+
+    <script id="movies-template" type="text/x-handlebars-template">
+      {{#each data}}
+        <div class="movie">
+          <p>
+            MOVIE NAME: {{title}}
+          </p>
+          <img src="{{img}}" alt="" />
+          <p>
+            YEAR: {{year}}
+          </p>
+          {{!-- //"works until part 7"
+          <div data-id={{movieId}} onclick=getRating()></div>
+          <ul class="ratings">
+            {{#each ratings}}
+            <li class="rating">{{this}}</li>
+            {{/each}}
+          </ul> --}}
+        </div>
+      {{/each}}
+    </script>
+
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
